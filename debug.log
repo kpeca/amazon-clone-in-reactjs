@@ -1,2 +1,11 @@
 [1003/172909.362:ERROR:process_info.cc(359)] UncheckedAllocate
 [1003/173014.332:ERROR:file_io.cc(135)] WriteFile: The pipe is being closed. (0xE8)
+[1012/203534.327:ERROR:process_info.cc(359)] UncheckedAllocate
+[1012/203537.577:ERROR:process_info.cc(359)] UncheckedAllocate
+[1012/203540.166:ERROR:process_info.cc(359)] UncheckedAllocate
+[1012/203540.418:ERROR:process_info.cc(359)] UncheckedAllocate
+[1012/203542.858:ERROR:process_info.cc(359)] UncheckedAllocate
+[1012/203607.370:ERROR:file_io.cc(135)] WriteFile: The pipe is being closed. (0xE8)
+[1012/203607.371:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: An attempt was made to access an exiting process. (0xc000010a)
+[1012/203607.372:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits64>]: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[1012/203607.372:ERROR:process_info.cc(551)] ReadProcessData failed
