@@ -1,11 +1,18 @@
 export const initialState = {
   basket: [],
+  user: null,
 };
 
 export const getBasketSum = (basket) =>
   basket?.reduce((total, item) => total + item.price, 0);
 function reducer(state, action) {
   switch (action.type) {
+    case "SET_USER":
+      console.log(action.user);
+      return {
+        ...state,
+        user: action.user,
+      };
     case "ADD_TO_BASKET":
       //logika
       return {
@@ -14,7 +21,6 @@ function reducer(state, action) {
       };
     case "REMOVE_FROM_BASKET":
       //logika
-      console.log(action);
       let newBasket = [...state.basket];
       let index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.item.id

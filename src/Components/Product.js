@@ -2,28 +2,34 @@ import React from "react";
 import "./Product.css";
 import StarIcon from "@material-ui/icons/Star";
 import { useStateValue } from "../StateProvider";
+import { useHistory } from "react-router-dom";
 
 function Product({ id, title, price, rating, image }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const history = useHistory();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   const addToBasket = () => {
-    dispatch({
-      type: "ADD_TO_BASKET",
-      payload: {
-        id,
-        title,
-        price,
-        rating,
-        image,
-      },
-    });
+    if (!user) {
+      history.push("/login");
+    } else {
+      dispatch({
+        type: "ADD_TO_BASKET",
+        payload: {
+          id,
+          title,
+          price,
+          rating,
+          image,
+        },
+      });
+    }
   };
 
   return (
     <div className="product">
       <div className="product__info">
         {title?.length > 35 ? (
-          <p>{title.substring(0, 35) + "..."}</p>
+          <p>{title.substring(0, 31) + "..."}</p>
         ) : (
           <p>{title}</p>
         )}
